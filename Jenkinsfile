@@ -58,7 +58,7 @@ node {
             passwordVariable: 'DOCKER_REGISTRY_PWD'
         )]) {
             // Usa las variables en el pom.xml (jib <auth> con ${DOCKER_REGISTRY_USER}/${DOCKER_REGISTRY_PWD})
-            sh "./mvnw -ntp -Pprod jib:build"
+            sh "./mvnw -ntp -Pprod jib:build -DDOCKER_REGISTRY_USER='${env.DOCKER_REGISTRY_USER}' -DDOCKER_REGISTRY_PWD='${env.DOCKER_REGISTRY_PWD}'"
         }
     }
 }
