@@ -1,0 +1,32 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "authenticationType": "jwt",
+    "baseName": "inteContinua",
+    "buildTool": "maven",
+    "cacheProvider": "ehcache",
+    "clientFramework": "angular",
+    "clientTestFrameworks": [],
+    "clientTheme": "none",
+    "creationTimestamp": 1762372904006,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "enableHibernateCache": true,
+    "enableTranslation": false,
+    "entities": [],
+    "feignClient": null,
+    "jhipsterVersion": "8.11.0",
+    "jwtSecretKey": "YWQyMTA0ODljMmY0NWI2NTMxZjVmZGU0MzkxMmYyOWM4OWNkYzA5OWY4OWM3MzgyMmJmNjY1NDE0YmUwNjFmZjFhOTM4NTc0MThmZDY1NjIzNDFkNDIzODg2OTZiYzY4NjQ2NTc3M2IxNzJiNTQ1ZmQxOTI1OTg5N2Y1ZWI0YWQ=",
+    "microfrontend": null,
+    "microfrontends": [],
+    "nativeLanguage": "en",
+    "packageName": "sofia.soler.jhipster",
+    "prodDatabaseType": "postgresql",
+    "reactive": false,
+    "serverPort": null,
+    "serviceDiscoveryType": null,
+    "syncUserWithIdp": null,
+    "testFrameworks": [],
+    "withAdminUi": true
+  }
+}

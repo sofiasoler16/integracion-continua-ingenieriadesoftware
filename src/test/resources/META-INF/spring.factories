@@ -1,0 +1,2 @@
+org.springframework.test.context.ContextCustomizerFactory = \
+    sofia.soler.jhipster.config.SqlTestContainersSpringContextCustomizerFactory
