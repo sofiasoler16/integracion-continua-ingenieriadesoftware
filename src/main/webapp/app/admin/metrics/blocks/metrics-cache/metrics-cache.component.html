@@ -1,19 +1,19 @@
-<h3 id="cacheMetrics()">Cache statistics</h3>
+<h3 id="cacheMetrics()" jhiTranslate="metrics.cache.title">Estadísticas de cache</h3>
 
 @if (!updating() && cacheMetrics()) {
   <div class="table-responsive">
     <table class="table table-striped" aria-describedby="cacheMetrics">
       <thead>
         <tr>
-          <th scope="col">Cache name</th>
-          <th scope="col" class="text-end">Cache Hits</th>
-          <th scope="col" class="text-end">Cache Misses</th>
-          <th scope="col" class="text-end">Cache Gets</th>
-          <th scope="col" class="text-end">Cache Puts</th>
-          <th scope="col" class="text-end">Cache Removals</th>
-          <th scope="col" class="text-end">Cache Evictions</th>
-          <th scope="col" class="text-end">Cache Hit %</th>
-          <th scope="col" class="text-end">Cache Miss %</th>
+          <th scope="col" jhiTranslate="metrics.cache.cachename">Nombre cache</th>
+          <th scope="col" class="text-end" jhiTranslate="metrics.cache.hits">Accesos</th>
+          <th scope="col" class="text-end" jhiTranslate="metrics.cache.misses">Fallos</th>
+          <th scope="col" class="text-end" jhiTranslate="metrics.cache.gets">Translation missing for metrics.cache.gets</th>
+          <th scope="col" class="text-end" jhiTranslate="metrics.cache.puts">Translation missing for metrics.cache.puts</th>
+          <th scope="col" class="text-end" jhiTranslate="metrics.cache.removals">Translation missing for metrics.cache.removals</th>
+          <th scope="col" class="text-end" jhiTranslate="metrics.cache.evictions">Contador desalojo</th>
+          <th scope="col" class="text-end" jhiTranslate="metrics.cache.hitPercent">Translation missing for metrics.cache.hitPercent</th>
+          <th scope="col" class="text-end" jhiTranslate="metrics.cache.missPercent">Translation missing for metrics.cache.missPercent</th>
         </tr>
       </thead>
       <tbody>

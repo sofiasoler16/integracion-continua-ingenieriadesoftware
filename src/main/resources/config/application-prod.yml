@@ -17,7 +17,7 @@ logging:
   level:
     ROOT: INFO
     tech.jhipster: INFO
-    sofia.soler.jhipster: INFO
+    com.mycompany.myapp: INFO
 
 management:
   prometheus:
@@ -31,10 +31,13 @@ spring:
       enabled: false
     livereload:
       enabled: false
+  docker:
+    compose:
+      enabled: false
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/inteContinua
-    username: inteContinua
+    url: jdbc:postgresql://localhost:5432/prueba
+    username: prueba
     password:
     hikari:
       poolName: Hikari
@@ -52,7 +55,7 @@ spring:
 
 # ===================================================================
 # To enable TLS in production, generate a certificate using:
-# keytool -genkey -alias intecontinua -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
+# keytool -genkey -alias prueba -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
 #
 # You can also use Let's Encrypt:
 # See details in topic "Create a Java Keystore (.JKS) from Let's Encrypt Certificates" on https://maximilian-boehm.com/en-gb/blog
@@ -99,7 +102,7 @@ jhipster:
         # - In the Consul configserver
         # - In a separate `application-prod.yml` file, in the same folder as your executable JAR file
         # - In the `JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET` environment variable
-        base64-secret: YWQyMTA0ODljMmY0NWI2NTMxZjVmZGU0MzkxMmYyOWM4OWNkYzA5OWY4OWM3MzgyMmJmNjY1NDE0YmUwNjFmZjFhOTM4NTc0MThmZDY1NjIzNDFkNDIzODg2OTZiYzY4NjQ2NTc3M2IxNzJiNTQ1ZmQxOTI1OTg5N2Y1ZWI0YWQ=
+        base64-secret: YmZiMzUxNzk2NDA1NDNhYjYxMTMxOGNiM2IyODZiMmNmYjg3NDI1ZmM3OWQ0MjE1NDM3NzliYjY0YWNmZGU0OGQyNzc1ODgwZjU0MGRlOGFmYzA2MDE2YjEyZTViNGM4YWUyNDgzMjBhZWUyMDMxNDFlYjNiMTA2YzE0NTlkMTE=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000

@@ -11,8 +11,8 @@
 spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:file:./target/h2db/testdb/intecontinua;DB_CLOSE_DELAY=-1
-    username: inteContinua
+    url: jdbc:h2:file:./target/h2db/testdb/prueba;DB_CLOSE_DELAY=-1
+    username: prueba
     password:
     hikari:
       auto-commit: false

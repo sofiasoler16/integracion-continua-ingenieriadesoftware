@@ -15,7 +15,7 @@
 
 spring:
   application:
-    name: inteContinua
+    name: prueba
   # Replace by 'prod, faker' to add the faker context and have sample data loaded in production
   liquibase:
     contexts: test
@@ -36,13 +36,13 @@ spring:
           authorities-claim-name: auth
   task:
     execution:
-      thread-name-prefix: inte-continua-task-
+      thread-name-prefix: prueba-task-
       pool:
         core-size: 1
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: inte-continua-scheduling-
+      thread-name-prefix: prueba-scheduling-
       pool:
         size: 20
   thymeleaf:
@@ -59,9 +59,9 @@ server:
 # ===================================================================
 jhipster:
   clientApp:
-    name: 'inteContinuaApp'
+    name: 'pruebaApp'
   mail:
-    from: inteContinua@localhost.com
+    from: prueba@localhost.com
     base-url: http://127.0.0.1:8080
   logging:
     # To test json console appender
@@ -75,7 +75,7 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-        base64-secret: YWQyMTA0ODljMmY0NWI2NTMxZjVmZGU0MzkxMmYyOWM4OWNkYzA5OWY4OWM3MzgyMmJmNjY1NDE0YmUwNjFmZjFhOTM4NTc0MThmZDY1NjIzNDFkNDIzODg2OTZiYzY4NjQ2NTc3M2IxNzJiNTQ1ZmQxOTI1OTg5N2Y1ZWI0YWQ=
+        base64-secret: YmZiMzUxNzk2NDA1NDNhYjYxMTMxOGNiM2IyODZiMmNmYjg3NDI1ZmM3OWQ0MjE1NDM3NzliYjY0YWNmZGU0OGQyNzc1ODgwZjU0MGRlOGFmYzA2MDE2YjEyZTViNGM4YWUyNDgzMjBhZWUyMDMxNDFlYjNiMTA2YzE0NTlkMTE=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 86400

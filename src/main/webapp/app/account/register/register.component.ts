@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ElementRef, inject, signal, viewChild } from 
 import { HttpErrorResponse } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 
 import { EMAIL_ALREADY_USED_TYPE, LOGIN_ALREADY_USED_TYPE } from 'app/config/error.constants';
 import SharedModule from 'app/shared/shared.module';
@@ -46,6 +47,7 @@ export default class RegisterComponent implements AfterViewInit {
     }),
   });
 
+  private readonly translateService = inject(TranslateService);
   private readonly registerService = inject(RegisterService);
 
   ngAfterViewInit(): void {
@@ -64,7 +66,7 @@ export default class RegisterComponent implements AfterViewInit {
     } else {
       const { login, email } = this.registerForm.getRawValue();
       this.registerService
-        .save({ login, email, password, langKey: 'en' })
+        .save({ login, email, password, langKey: this.translateService.currentLang })
         .subscribe({ next: () => this.success.set(true), error: response => this.processError(response) });
     }
   }

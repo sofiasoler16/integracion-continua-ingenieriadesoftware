@@ -3,12 +3,12 @@
                              https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>sofia.soler.jhipster</groupId>
-    <artifactId>inte-continua</artifactId>
+    <groupId>com.mycompany.myapp</groupId>
+    <artifactId>prueba</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Inte Continua</name>
-    <description>Description for Inte Continua</description>
+    <name>Prueba</name>
+    <description>Description for Prueba</description>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -31,7 +31,7 @@
         <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <start-class>sofia.soler.jhipster.InteContinuaApp</start-class>
+        <start-class>com.mycompany.myapp.PruebaApp</start-class>
         <argLine>-Djava.security.egd=file:/dev/./urandom -Xmx1G</argLine>
         <m2e.apt.activation>jdt_apt</m2e.apt.activation>
         <run.addResources>false</run.addResources>
@@ -81,6 +81,16 @@
     </properties>
 
     <dependencies>
+      <dependency>
+        <groupId>org.codehaus.janino</groupId>
+        <artifactId>janino</artifactId>
+        <version>3.1.12</version>
+      </dependency>
+      <dependency>
+        <groupId>org.codehaus.janino</groupId>
+        <artifactId>commons-compiler</artifactId>
+        <version>3.1.12</version>
+      </dependency>
         <dependency>
             <groupId>tech.jhipster</groupId>
             <artifactId>jhipster-framework</artifactId>
@@ -99,7 +109,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-        <dependency>
+      <dependency>
+        <groupId>net.logstash.logback</groupId>
+        <artifactId>logstash-logback-encoder</artifactId>
+        <version>7.4</version>
+      </dependency>
+
+      <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
@@ -627,17 +643,16 @@
                             </platforms>
                         </from>
                         <to>
-                        <image>sofiasoler16044/integracion-continua-ingenieriadesoftware:latest</image>
-                        <tags>
-                            <tag>${project.version}</tag>
-                            <tag>latest</tag>
-                        </tags>
-                        <auth>
-                            <username>${DOCKER_REGISTRY_USER}</username>
-                            <password>${DOCKER_REGISTRY_PWD}</password>
-                        </auth>
+                            <image>sofiasoler16044/integracion-continua-ingenieriadesoftware:latest</image>
+                            <tags>
+                                <tag>${project.version}</tag>
+                                <tag>latest</tag>
+                            </tags>
+                            <auth>
+                                <username>${DOCKER_REGISTRY_USER}</username>
+                                <password>${DOCKER_REGISTRY_PWD}</password>
+                            </auth>
                         </to>
-
                         <container>
                             <entrypoint>
                                 <shell>bash</shell>
@@ -786,7 +801,7 @@
                         <defaultSchemaName/>
                         <username>${liquibase-plugin.username}</username>
                         <password>${liquibase-plugin.password}</password>
-                        <referenceUrl>hibernate:spring:sofia.soler.jhipster.domain?dialect=${liquibase-plugin.hibernate-dialect}&amp;hibernate.physical_naming_strategy=org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
+                        <referenceUrl>hibernate:spring:com.mycompany.myapp.domain?dialect=${liquibase-plugin.hibernate-dialect}&amp;hibernate.physical_naming_strategy=org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
                         <verbose>true</verbose>
                         <logging>debug</logging>
                         <contexts>!test</contexts>
@@ -845,8 +860,8 @@
                 <liquibase-plugin.driver>org.h2.Driver</liquibase-plugin.driver>
                 <liquibase-plugin.hibernate-dialect>org.hibernate.dialect.H2Dialect</liquibase-plugin.hibernate-dialect>
                 <liquibase-plugin.password/>
-                <liquibase-plugin.url>jdbc:h2:file:${project.build.directory}/h2db/db/inteContinua</liquibase-plugin.url>
-                <liquibase-plugin.username>inteContinua</liquibase-plugin.username>
+                <liquibase-plugin.url>jdbc:h2:file:${project.build.directory}/h2db/db/prueba</liquibase-plugin.url>
+                <liquibase-plugin.username>prueba</liquibase-plugin.username>
                 <profile.test>test,testdev</profile.test>
                 <spring.profiles.active>dev${profile.tls}${profile.no-liquibase}</spring.profiles.active>
             </properties>
@@ -868,7 +883,7 @@
                         <artifactId>maven-compiler-plugin</artifactId>
                         <configuration>
                             <testExcludes>
-                                <testExclude>sofia/soler/jhipster/config/PostgreSqlTestContainer.java</testExclude>
+                                <testExclude>com/mycompany/myapp/config/PostgreSqlTestContainer.java</testExclude>
                             </testExcludes>
                         </configuration>
                     </plugin>
@@ -985,8 +1000,8 @@
                 <liquibase-plugin.driver>org.postgresql.Driver</liquibase-plugin.driver>
                 <liquibase-plugin.hibernate-dialect>org.hibernate.dialect.PostgreSQLDialect</liquibase-plugin.hibernate-dialect>
                 <liquibase-plugin.password/>
-                <liquibase-plugin.url>jdbc:postgresql://localhost:5432/inteContinua</liquibase-plugin.url>
-                <liquibase-plugin.username>inteContinua</liquibase-plugin.username>
+                <liquibase-plugin.url>jdbc:postgresql://localhost:5432/prueba</liquibase-plugin.url>
+                <liquibase-plugin.username>prueba</liquibase-plugin.username>
                 <profile.test>test,testprod</profile.test>
                 <spring.profiles.active>prod${profile.api-docs}${profile.tls}${profile.e2e}${profile.no-liquibase}</spring.profiles.active>
             </properties>

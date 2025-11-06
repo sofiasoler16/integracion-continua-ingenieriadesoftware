@@ -18,7 +18,7 @@ logging:
     ROOT: DEBUG
     tech.jhipster: DEBUG
     org.hibernate.SQL: DEBUG
-    sofia.soler.jhipster: DEBUG
+    com.mycompany.myapp: DEBUG
 
 spring:
   devtools:
@@ -37,8 +37,8 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:file:./target/h2db/db/inteContinua;DB_CLOSE_DELAY=-1
-    username: inteContinua
+    url: jdbc:h2:file:./target/h2db/db/prueba;DB_CLOSE_DELAY=-1
+    username: prueba
     password:
     hikari:
       poolName: Hikari
@@ -91,7 +91,7 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
-        base64-secret: YWQyMTA0ODljMmY0NWI2NTMxZjVmZGU0MzkxMmYyOWM4OWNkYzA5OWY4OWM3MzgyMmJmNjY1NDE0YmUwNjFmZjFhOTM4NTc0MThmZDY1NjIzNDFkNDIzODg2OTZiYzY4NjQ2NTc3M2IxNzJiNTQ1ZmQxOTI1OTg5N2Y1ZWI0YWQ=
+        base64-secret: YmZiMzUxNzk2NDA1NDNhYjYxMTMxOGNiM2IyODZiMmNmYjg3NDI1ZmM3OWQ0MjE1NDM3NzliYjY0YWNmZGU0OGQyNzc1ODgwZjU0MGRlOGFmYzA2MDE2YjEyZTViNGM4YWUyNDgzMjBhZWUyMDMxNDFlYjNiMTA2YzE0NTlkMTE=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000
@@ -100,7 +100,7 @@ jhipster:
   logging:
     use-json-format: false # By default, logs are not in Json format
     logstash: # Forward logs to logstash over a socket, used by LoggingConfiguration
-      enabled: false
+      enabled: true
       host: localhost
       port: 5000
       ring-buffer-size: 512

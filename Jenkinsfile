@@ -51,14 +51,19 @@ node {
 
     def dockerImage
     stage('publish docker') {
-        // Requiere credencial Global con ID: dockerhub-login
         withCredentials([usernamePassword(
             credentialsId: 'dockerhub-login',
-            usernameVariable: 'DOCKER_REGISTRY_USER',
-            passwordVariable: 'DOCKER_REGISTRY_PWD'
+            usernameVariable: 'DOCKER_USER',
+            passwordVariable: 'DOCKER_TOKEN'
         )]) {
-            // Usa las variables en el pom.xml (jib <auth> con ${DOCKER_REGISTRY_USER}/${DOCKER_REGISTRY_PWD})
-            sh "./mvnw -ntp -Pprod jib:build"
+            sh """
+                ./mvnw -ntp -Pprod \
+                -Djib.to.image=sofiasoler16044/integracion-continua-ingenieriadesoftware \
+                -Djib.to.auth.username=$DOCKER_USER \
+                -Djib.to.auth.password=$DOCKER_TOKEN \
+                jib:build
+            """
         }
     }
+
 }
